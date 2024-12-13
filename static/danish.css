@@ -1,0 +1,17 @@
+.danish__title {
+    font-family: Inter, sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 67.77px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.danish__text {
+    font-family: Inter,sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 44.78px;
+    text-align: left;
+
+}

@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: "Amaranth";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/Amaranth-Bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Rounded Mplus 1c";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../font/MPLUSRounded1c-Black.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../font/PlayfairDisplay-Italic.woff2") format("woff2");
+}
+
+:root {
+    --font-family: "Inter", sans-serif;
+    --second-family: "Amaranth", sans-serif;
+    --third-family: "Playfair Display", sans-serif;
+    --font3: "Rounded Mplus 1c", sans-serif;
+}

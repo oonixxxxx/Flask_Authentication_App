@@ -1,0 +1,97 @@
+
+.map__title {
+    font-family: var(--font-family);
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 68px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+
+.map__subtitle {
+    width: 1305px;
+    margin: 0 auto;
+    font-family: Inter, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 36px;
+    text-align: center;
+}
+
+.box__map {
+    position: relative;
+}
+
+.map__img {
+    width: 100%;
+    border-radius: 52px;
+}
+
+.map__sova {
+    position: absolute;
+}
+
+.map__sova-usa {
+    left: 343px;
+    top: 289px;
+}
+
+.map__sova-london {
+    left: 705px;
+    top: 208px;
+}
+
+.map__sova-germany {
+    left: 714px;
+    top: 254px;
+}
+
+.map__sova-sweden {
+    left: 681px;
+    top: 290px;
+}
+
+.map__sova-сzech {
+    left: 776px;
+    top: 229px;
+}
+
+.map__sova-moscow {
+    right: 668px;
+    top: 203px;
+}
+
+.map__sova-novgorod {
+    right: 649px;
+    top: 258px;
+}
+
+.map__sova-ekaterinburg {
+    right: 466px;
+    top: 200px;
+
+}
+
+.map__sova-rsa {
+    left: 777px;
+    bottom: 256px;
+}
+
+.map__sova-china {
+    right: 442px;
+    top: 347px;
+
+}
+
+.map__sova-japan {
+    right: 155px;
+    top: 326px;
+
+}
+
+.map__sova-new-zealand {
+    right: 309px;
+    bottom: 205px;
+}
