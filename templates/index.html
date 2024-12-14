@@ -201,7 +201,7 @@
               <img class="stat__img" src="{{ url_for('static', filename='img/stat-frth.png') }}" alt="" />
               <p class="stat__sentence">
                 235 человек Общее кол-во медалистов
-                <ins>(10% от общего количества учеников)</ins>
+                <ins>(10% ��т общего количества учеников)</ins>
               </p>
             </div>
           </div>
@@ -237,7 +237,7 @@
             <img src="{{ url_for('static', filename='img/licey%201.png') }}" alt="#" class="infrast__part-img2">
             <img src="{{ url_for('static', filename='img/licey%203.png') }}" alt="#" class="infrast__part-img3">
             <p class="infrast__part-text1">
-              Для учеников, ведущих спортивный образ жизни, в нашем лицее есть спортивная площадка, где можно играть в баскетбол и футбол, и спортивный зал с различным инвентарем.
+              Для ученико��, ведущих спортивный образ жизни, в нашем лицее есть спортивная площадка, где можно играть в баскетбол и футбол, и спортивный зал с различным инвентарем.
             </p>
             <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
           </div>
@@ -253,7 +253,7 @@
           </div>
           <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
           <div class="infrastructure__part">
-            <h2 class="infrastructure__item">Компьютерные классы</h2>
+            <h2 class="infrastructure__item">Компью��ерные классы</h2>
             <p class="infrast__part-text3">
               Лицей предлагает удобные кабинеты информатики с мощными компьютерами, графическими планшетами и сенсорными досками.
             </p>
@@ -325,3 +325,43 @@
   </body>
   <script src="{{ url_for('static', filename='modalwindow.js') }}"></script>
 </html>
+
+<style>
+.products-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.product-card {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: white;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-name {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #2c3e50;
+}
+</style>
