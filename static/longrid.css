@@ -1,8 +1,8 @@
 
 
 .longrid__top {
-    background: linear-gradient(264.69deg, rgba(245, 245, 245, 0.12) 0%,
-    rgba(3, 3, 3, .9) 99%),
+    background: linear-gradient(264.69deg, rgba(187, 255, 0, 0.63) 0%,
+    rgba(126, 126, 126, 0.9) 99%),
     url("../img/main-bg.jpg");
     background-size: 100% 100%;
     border-radius: 20px;
@@ -67,7 +67,7 @@
 }
 
 .longrid__blockq {
-    background: linear-gradient(90deg, #EBEDEC 32.99%, #737373 100%);
+    background: linear-gradient(90deg, #c4c4c4a2 32.99%, #b9f827b6 100%);
     border-radius: 25px;
     display: flex;
 }

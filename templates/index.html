@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PKL_museum</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-    <script src="../jquery.js"></script>
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
   </head>
 
   <body id="body">
     <header class="header">
       <div class="container header__container">
         <div class="header__top">
-          <img class="header__top-logo" src="../static/img/logo.png" alt="Логотип" />
+          <img class="header__top-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Логотип" />
           <p class="header__top-sentence">
             <span class="line-break">Музей истории </span>
             <span class="line-break"
@@ -39,7 +38,7 @@
             того же педагогического университета, а учениками – пятьдесят
             десятиклассников из школ города и области
           </p>
-          <a href="oldpkl.html" class="switch-page-btn">1992-2005</a>
+          <a href="{{ url_for('oldpkl') }}" class="switch-page-btn">1992-2005</a>
         </div>
       </div>
     </header>
@@ -120,7 +119,7 @@
               инициативу Областной совет народных депутатов. Университет
               предоставил первым 50 учащимся учебные кабинеты, право
               пользоваться библиотекой и спортивным залом. Департамент
-              образования взял на себя бюджетное финансирование образовательного
+              образования взял на себя бюд��етное финансирование образовательного
               процесса. Бессменным руководителем лицея является
               <strong class="history__text-strong"
                 >Емельянов Валерий Евгеньевич</strong
@@ -136,7 +135,7 @@
                 >математики и информатики</strong
               >, а с 2005 - профиль
               <strong class="history__text-strong">дизайна</strong>. В 2009 году
-              дизайнерское направление было исключено из учебной программы.
+              дизайнерское направление было ��сключено из учебной программы.
               Тогда же появляется
               <strong class="history__text-strong">экономико-правовое</strong>
               направление подготовки учащихся. В 2012 году на смену профилю
@@ -230,10 +229,10 @@
         <div class="container">
           <h2 class="map__title">Лицей на карте</h2>
           <div class="box__map">
-            <img class="map__img" src="../img/map.jpg" alt="" />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-usa" />
+            <img class="map__img" src="{{ url_for('static', filename='img/map.jpg') }}" alt="Карта" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-usa" />
             <button id="open-modal-btn" data-video="../video/london.mp4" data-title="Англия Лондон" data-subtitle="Голубихин Дмитрий Выпускник 2003 года">
-              <img src="../img/sova.png" alt="" class="map__sova map__sova-london">
+              <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-london">
             </button>
             <div class="modal" id="my-modal">
               <div class="modal__box">
@@ -255,23 +254,23 @@
                 <button class="sf-close"></button>
               </div>
             </div>
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-sweden" />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-сzech" />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-moscow" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-sweden" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-сzech" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-moscow" />
             <img
-              src="../img/sova.png"
+              src="{{ url_for('static', filename='img/sova.png') }}"
               alt=""
               class="map__sova map__sova-novgorod"
             />
             <img
-              src="../img/sova.png"
+              src="{{ url_for('static', filename='img/sova.png') }}"
               alt="" class="map__sova map__sova-ekaterinburg"
             />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-rsa" />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-china" />
-            <img src="../img/sova.png" alt="" class="map__sova map__sova-japan" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-rsa" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-china" />
+            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-japan" />
             <img
-              src="../img/sova.png"
+              src="{{ url_for('static', filename='img/sova.png') }}"
               alt=""
               class="map__sova map__sova-new-zealand"
             />
@@ -290,26 +289,26 @@
           <p class="stat__pizdec">Из его стен вышло более 2300 выпускников</p>
           <div class="stat__content">
             <div class="stat__block">
-              <img class="stat__img" src="../img/stat-first.png" alt="" />
+              <img class="stat__img" src="{{ url_for('static', filename='img/stat-first.png') }}" alt="" />
               <p class="stat__sentence">
                 48 выпускников удостоены <strong>ЗОЛОТОЙ</strong> медали
               </p>
             </div>
             <div class="stat__block">
-              <img class="stat__img" src="../img/stat-sec.png" alt="" />
+              <img class="stat__img" src="{{ url_for('static', filename='img/stat-sec.png') }}" alt="" />
               <p class="stat__sentence">
                 104 выпускников получили <strong>СЕРЕБРЯННУЮ</strong> медаль
               </p>
             </div>
             <div class="stat__block">
-              <img class="stat__img" src="../img/stat-thrd.png" alt="" />
+              <img class="stat__img" src="{{ url_for('static', filename='img/stat-thrd.png') }}" alt="" />
               <p class="stat__sentence">
                 83 выпускника удостоилось медали
                 <strong>“ЗА ОСОБЫЕ УСПЕХИ В УЧЕНИИ”</strong>
               </p>
             </div>
             <div class="stat__block">
-              <img class="stat__img" src="../img/stat-frth.png" alt="" />
+              <img class="stat__img" src="{{ url_for('static', filename='img/stat-frth.png') }}" alt="" />
               <p class="stat__sentence">
                 235 человек Общее кол-во медалистов
                 <ins>(10% от общего количества учеников)</ins>
@@ -344,13 +343,13 @@
             Спортивный зал и площадка
           </h3>
           <div class="infrastructure__part">
-            <img src="../img/licey%202.png" alt="#" class="infrast__part-img1">
-            <img src="../img/licey%201.png" alt="#" class="infrast__part-img2">
-            <img src="../img/licey%203.png" alt="#" class="infrast__part-img3">
+            <img src="{{ url_for('static', filename='img/licey%202.png') }}" alt="#" class="infrast__part-img1">
+            <img src="{{ url_for('static', filename='img/licey%201.png') }}" alt="#" class="infrast__part-img2">
+            <img src="{{ url_for('static', filename='img/licey%203.png') }}" alt="#" class="infrast__part-img3">
             <p class="infrast__part-text1">
               Для учеников, ведущих спортивный образ жизни, в нашем лицее есть спортивная площадка, где можно играть в баскетбол и футбол, и спортивный зал с различным инвентарем.
             </p>
-            <img src="../img/line.png" alt="#" class="black-line" width="500" height="90">
+            <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
           </div>
           <!-- <img src="img/horizontal-rule-svgrepo-com.svg" alt="#" class="black-line"> -->
           <div class="infrastructure__part-flex">
@@ -360,19 +359,19 @@
                   Наши лицеисты вкусно обедают – или завтракают – в светлой и комфортной столовой.
                 </p>
             </div>
-            <img src="../img/licey%204.png" alt="#" class="infrast__part-img4">
+            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img4">
           </div>
-          <img src="../img/line.png" alt="#" class="black-line" width="500" height="90">
+          <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
           <div class="infrastructure__part">
             <h2 class="infrastructure__item">Компьютерные классы</h2>
             <p class="infrast__part-text3">
               Лицей предлагает удобные кабинеты информатики с мощными компьютерами, графическими планшетами и сенсорными досками.
             </p>
-            <img src="../img/licey%204.png" alt="#" class="infrast__part-img5">
+            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img5">
           </div>
-          <img src="../img/line.png" alt="#" class="black-line" width="500" height="90">
+          <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
           <div class="infrastructure__part">
-            <img src="../img/licey%204.png" alt="#" class="infrast__part-img6">
+            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img6">
             <h2 class="infrastructure__item">Актовый зал</h2>
             <p class="infrast__part-text4">
               Для проведения различных мероприятий у нашем лицее есть просторный и удобный как для актеров, так и для зрителей актовый зал.
@@ -387,10 +386,10 @@
           <p class="link__title">Музей МАОУ ПКЛ</p>
           <div class="link__container">
             <a class="link__box" href="#">
-              <img class="link__vk" src="../img/vk.jpg" alt="" />
+              <img class="link__vk" src="{{ url_for('static', filename='img/vk.jpg') }}" alt="ВКонтакте" />
             </a>
             <a href="#">
-              <img class="link__ytube" src="../img/ytube.jpg" alt="" />
+              <img class="link__ytube" src="{{ url_for('static', filename='img/ytube.jpg') }}" alt="YouTube" />
             </a>
           </div>
         </div>
@@ -434,6 +433,5 @@
       </div>
     </footer>
   </body>
-  <script src="../jquery.js"></script>
-  <script src="../modalwindow.js"></script>
+  <script src="{{ url_for('static', filename='modalwindow.js') }}"></script>
 </html>
