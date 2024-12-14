@@ -94,8 +94,12 @@ def index():
     user_name = session.get('user_name')
     return render_template('index.html', user_name=user_name)
 
+@app.route('/oldpkl')
+def oldpkl():
+    return render_template('oldpkl.html')  # Создайте соответствующий шаблон
+
 # Инициализация базы данных при запуске
 init_db()
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, threaded=True)
+    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)
