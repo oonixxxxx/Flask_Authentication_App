@@ -20,30 +20,32 @@
 
 1. Создайте виртуальное окружение:
 
-bash
+```
 python -m venv venv
 source venv/bin/activate # для Linux/Mac
 venv\Scripts\activate # для Windows
+```
 
 
 2. Установите зависимости:
 
-bash
+```
 pip install -r requirements.txt
-
+```
 
 ### Запуск через Docker
 
 1. Соберите Docker-образ:
 
-bash
+```
 docker build -t flask-app .
-
+```
 
 2. Запустите контейнер:
 
-bash
+```
 docker run -p 5000:5000 flask-app
+```
 
 ## API Endpoints
 
