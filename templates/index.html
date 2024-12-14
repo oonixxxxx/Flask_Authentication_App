@@ -9,6 +9,20 @@
   </head>
 
   <body id="body">
+    <div class="auth-header">
+      <div class="container auth-header__container">
+        <div class="auth-header__buttons">
+          {% if user_name %}
+              <span class="auth-username">{{ user_name }}</span>
+              <a href="{{ url_for('logout') }}" class="auth-btn logout-btn">Выйти</a>
+          {% else %}
+              <a href="{{ url_for('login') }}" class="auth-btn login-btn">Войти</a>
+              <a href="{{ url_for('signup') }}" class="auth-btn signup-btn">Регистрация</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
     <header class="header">
       <div class="container header__container">
         <div class="header__top">
@@ -46,7 +60,7 @@
       <section class="longrid">
         <div class="container">
           <section class="longrid__top">
-            <h2 class="longrid__top-title">30 лет — дорога в зрелость</h2>
+            <h2 class="longrid__top-title">30 лет — дорога �� зрелость</h2>
             <p class="longrid__top-sentence">
               Лицей для меня – это место, в котором я нахожу мотивацию двигаться
               дальше и развиваться. Люди здесь стали уже родными. Я чувствую,
@@ -64,7 +78,7 @@
               проведенное в этих стенах.
             </p>
             <p class="longrid__text-content">
-              Юбилей мы встречаем в хорошей рабочей форме, стараясь обеспечивать
+              Юбилей мы встречаем в хорошей рабоч��й форме, стараясь обеспечивать
               тот уровень учебной подготовки наших ребят, который отвечает
               высоким запросам общества, полноценному, всестороннему,
               качественному образованию.
@@ -119,7 +133,7 @@
               инициативу Областной совет народных депутатов. Университет
               предоставил первым 50 учащимся учебные кабинеты, право
               пользоваться библиотекой и спортивным залом. Департамент
-              образования взял на себя бюд��етное финансирование образовательного
+              образования взял на себя бюджетное финансирование образовательного
               процесса. Бессменным руководителем лицея является
               <strong class="history__text-strong"
                 >Емельянов Валерий Евгеньевич</strong
@@ -135,7 +149,7 @@
                 >математики и информатики</strong
               >, а с 2005 - профиль
               <strong class="history__text-strong">дизайна</strong>. В 2009 году
-              дизайнерское направление было ��сключено из учебной программы.
+              дизайнерское направление было исключено из учебной программы.
               Тогда же появляется
               <strong class="history__text-strong">экономико-правовое</strong>
               направление подготовки учащихся. В 2012 году на смену профилю
@@ -162,7 +176,7 @@
               </span>
               <span class="history__span"
                 >Созданная преподавателями и учениками атмосфера лицейского
-                братства свято сохраняется и передается из поколения в
+                братст��а свято сохраняется и передается из поколения в
                 поколение.</span
               >
             </p>
@@ -187,7 +201,7 @@
               - всевозможные поездки и экскурсии;
             </p>
             <p class="history__text history__text_list">
-              - ежегодный проект <em>«Лучший выпускник»</em>, который
+              - еже��одный проект <em>«Лучший выпускник»</em>, который
               поддерживают выпускники лицея;
             </p>
             <p class="history__text history__text_list">
@@ -231,7 +245,7 @@
           <div class="box__map">
             <img class="map__img" src="{{ url_for('static', filename='img/map.jpg') }}" alt="Карта" />
             <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-usa" />
-            <button id="open-modal-btn" data-video="../video/london.mp4" data-title="Англия Лондон" data-subtitle="Голубихин Дмитрий Выпускник 2003 года">
+            <button id="open-modal-btn" data-video="../video/london.mp4" data-title="Англия Лондон" data-subtitle="Голуби��ин Дмитрий Выпускник 2003 года">
               <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-london">
             </button>
             <div class="modal" id="my-modal">
@@ -285,7 +299,7 @@
       <section class="stat">
         <div class="container">
           <h2 class="section__title">Статистика лицея</h2>
-          <p class="stat__subtitle">за 30 лет существования лицея</p>
+          <p class="stat__subtitle">за 30 лет существ��вания лицея</p>
           <p class="stat__pizdec">Из его стен вышло более 2300 выпускников</p>
           <div class="stat__content">
             <div class="stat__block">
@@ -318,7 +332,7 @@
           <div class="stat__sec-content">
             <div class="stat__sec-block">
               <p class="stat__sec-sentence">
-                Вслед за своими старшими братьями и сестрами поступили в лицей и успешно его окончили 60 человек.
+                Вслед за своими старшими братьями  сестрами поступили в лицей и успешно его окончили 60 человек.
               </p>
             </div>
             <div class="stat__sec-block">
