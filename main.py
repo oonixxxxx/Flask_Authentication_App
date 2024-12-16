@@ -88,15 +88,10 @@ def logout():
     flash('Вы вышли из системы')
     return redirect(url_for('index'))
 
-# Обновляем маршрут index для отображения информации о пользователе
 @app.route('/')
 def index():
     user_name = session.get('user_name')
     return render_template('index.html', user_name=user_name)
-
-@app.route('/oldpkl')
-def oldpkl():
-    return render_template('oldpkl.html')  # Создайте соответствующий шаблон
 
 # Инициализация базы данных при запуске
 init_db()
