@@ -57,7 +57,7 @@ def signup():
             flash('Пароли не совпадают')
             return render_template('signup.html')
         
-        # Хешируем пароль для безопасности
+        # Хешируем пароль для безо��асности
         hashed_password = generate_password_hash(password)
         
         try:
@@ -93,6 +93,12 @@ def index():
     # Получаем имя пользователя из сессии
     user_name = session.get('user_name')
     return render_template('index.html', user_name=user_name)
+
+# Новый маршрут для каталога
+@app.route('/catalog')
+def catalog():
+    # Здесь вы можете добавить логику для отображения каталога
+    return render_template('catalog.html')
 
 # Функция для создания таблицы пользователей в базе данных
 def init_db():
