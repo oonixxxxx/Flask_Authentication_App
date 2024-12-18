@@ -1,14 +1,10 @@
 from flask import Flask
-from .config import Config
-from .models import db
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object(Config)
-    
-    db.init_app(app)
-    
-    with app.app_context():
-        db.create_all()
-        
-    return app
+# Создаем экземпляр Flask-приложения
+app = Flask(__name__)
+
+# Загружаем конфигурацию из файла config.py
+app.config.from_object('config.Config')
+
+# Импортируем маршруты, чтобы они были зарегистрированы в приложении
+from app import routes
