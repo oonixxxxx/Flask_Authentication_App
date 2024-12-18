@@ -23,301 +23,80 @@
       </div>
     </div>
 
-    <header class="header">
-      <div class="container header__container">
-        <div class="header__top">
-          <img class="header__top-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="Логотип" />
-          <p class="header__top-sentence">
-            <span class="line-break">ONIX HUB</span>
-            <span class="line-break">Магазин современной техники</span>
-            <span class="line-break">и электроники</span>
-          </p>
-        </div>
-      </div>
+    <header class="hero-section">
       <div class="container">
-        <div class="header__main">
-          <h2 class="header__main-title">О нас</h2>
-          <p class="header__main-sentence">
-            ONIX HUB - это современный магазин техники и электроники, где вы найдете широкий ассортимент товаров от ведущих производителей. 
-            Мы работаем напрямую с официальными поставщиками, что гарантирует качество и надежность каждого устройства. 
-            Наша команда профессионалов всегда готова помочь с выбором и ответить на все ваши вопросы.
-          </p>
-          <a href="{{ url_for('login') }}" class="switch-page-btn">Каталог</a>
+        <div class="hero-content">
+          <h1>ONIX HUB</h1>
+          <p>Магазин современной техники и электроники</p>
+          <a href="{{ url_for('catalog') }}" class="cta-button">Перейти в каталог</a>
         </div>
       </div>
     </header>
-    <main>
-      <section class="longrid">
-        <div class="container">
-          <section class="longrid__top">
-            <h2 class="longrid__top-title">Ваш надежный проводник в мире технологий</h2>
-            <p class="longrid__top-sentence">
-              В ONIX HUB мы стремимся предоставить нашим клиентам лучший опыт покупок. Мы предлагаем не только товары, 
-              но и профессиональную консультацию, быструю доставку и гарантийное обслуживание.
-            </p>
-          </section>
-          <section class="longrid__text">
-            <p class="longrid__text-content">Почему выбирают ONIX HUB:</p>
-            <p class="longrid__text-content">
-              • Широкий ассортимент современной техники
-            </p>
-            <p class="longrid__text-content">
-              • Только оригинальная продукция от официальных поставщиков
-            </p>
-            <p class="longrid__text-content">
-              • Профессиональная консультация при выборе
-            </p>
-            <p class="longrid__text-content">
-              • Быстрая доставка по всей России
-            </p>
-            <p class="longrid__text-content">
-              • Гарантийное обслуживание и поддержка
-            </p>
-          </section>
-          <blockquote class="longrid__blockq">
-            <img
-              class="longrid__img-emelyanov"
-              alt="Директор"
-            />
-            <div class="signature">
-              <q class="longrid__q"
-                >Мы создаем пространство, где технологии становятся доступными каждому. 
-                Наша миссия - помогать людям выбирать лучшие технические решения для их потребностей
-              </q
-              >
-              <p class="longrid__q-snd">
-                <span>Александр Петров</span>
-                <span>Генеральный директор ONIX HUB</span>
-              </p>
-            </div>
-          </blockquote>
-        </div>
-      </section>
-      <section class="history">
-        <div class="container">
-          <div class="zxc">
-            <h2 class="history__title section__title">История компании</h2>
-            <p class="history__text">
-              <strong class="history__text-strong">ONIX HUB</strong>
-              начал свою работу в 2015 году как небольшой магазин мобильных устройств.
-            </p>
-            <p class="history__text">
-              За годы работы мы значительно расширили ассортимент и открыли магазины в крупнейших городах России. 
-              Сегодня ONIX HUB - это современная сеть магазинов электроники с профессиональной командой консультантов 
-              и сервисной поддержкой.
-            </p>
-            <p class="history__text">
-              Мы специализируемся на продаже <strong class="history__text-strong">смартфонов</strong>, 
-              <strong class="history__text-strong">ноутбуков</strong>, 
-              <strong class="history__text-strong">планшетов</strong>, 
-              <strong class="history__text-strong">умных часов</strong> и других современных гаджетов.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="map">
-        <div class="container">
-          <h2 class="map__title">Лицей на карте</h2>
-          <div class="box__map">
-            <img class="map__img" src="{{ url_for('static', filename='img/map.jpg') }}" alt="Карта" />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-usa" />
-            <button id="open-modal-btn" data-video="../video/london.mp4" data-title="Англия Лондон" data-subtitle="Голубиин Дмитрий Выпускник 2003 года">
-              <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-london">
-            </button>
-            <div class="modal" id="my-modal">
-              <div class="modal__box">
-                <button class="modal__close-btn" id="close-my-modal-btn">
-                  <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z" fill="#333333" />
-                    <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
-                  </svg>
-                </button>
-                <h2 class="modal__title"></h2>
-                <p class="modal__subtitle"></p>
-                <video class="modal__video" src="#" controls></video>
-              </div>
-            </div>
 
-            <div class="sf-modal-overlay">
-              <div class="sf-modal-area">
-                <div class="sf-modal-content sf-scroll"></div>
-                <button class="sf-close"></button>
-              </div>
-            </div>
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-sweden" />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-сzech" />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-moscow" />
-            <img
-              src="{{ url_for('static', filename='img/sova.png') }}"
-              alt=""
-              class="map__sova map__sova-novgorod"
-            />
-            <img
-              src="{{ url_for('static', filename='img/sova.png') }}"
-              alt="" class="map__sova map__sova-ekaterinburg"
-            />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-rsa" />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-china" />
-            <img src="{{ url_for('static', filename='img/sova.png') }}" alt="Сова" class="map__sova map__sova-japan" />
-            <img
-              src="{{ url_for('static', filename='img/sova.png') }}"
-              alt=""
-              class="map__sova map__sova-new-zealand"
-            />
-          </div>
-          <p class="map__subtitle">
-            Наши ученки поступают в лучшие ВУЗы нашей страны: в Москву, Нижний Новгород, Екатеринбург, – а также 
-            в учебные заведения других стран: США, Англии, 
-            Германии, Чехии, Швейцарии, ЮАР, Новой Зеландии, Китая и Японии.
-          </p>
-        </div>
-      </section>
-      <section class="stat">
+    <main>
+      <section class="featured-products">
         <div class="container">
-          <h2 class="section__title">Статистика лицея</h2>
-          <p class="stat__subtitle">за 30 лет существования лицея</p>
-          <p class="stat__pizdec">Из его стен вышло более 2300 выпускников</p>
-          <div class="stat__content">
-            <div class="stat__block">
-              <img class="stat__img" src="{{ url_for('static', filename='img/stat-first.png') }}" alt="" />
-              <p class="stat__sentence">
-                48 выпускников удостоены <strong>ЗОЛОТОЙ</strong> медали
-              </p>
+          <h2>Популярные товары</h2>
+          <div class="products-container">
+            <div class="product-card">
+              <img src="{{ url_for('static', filename='img/iphone.jpg') }}" alt="iPhone 15" class="product-image">
+              <h3 class="product-name">iPhone 15 Pro</h3>
+              <p class="product-price">от 99 990 ₽</p>
+              <button class="buy-button">Купить</button>
             </div>
-            <div class="stat__block">
-              <img class="stat__img" src="{{ url_for('static', filename='img/stat-sec.png') }}" alt="" />
-              <p class="stat__sentence">
-                104 выпускников получили <strong>СЕРЕБРЯННУЮ</strong> медаль
-              </p>
+            <div class="product-card">
+              <img src="{{ url_for('static', filename='img/macbook.jpg') }}" alt="MacBook" class="product-image">
+              <h3 class="product-name">MacBook Air M2</h3>
+              <p class="product-price">от 129 990 ₽</p>
+              <button class="buy-button">Купить</button>
             </div>
-            <div class="stat__block">
-              <img class="stat__img" src="{{ url_for('static', filename='img/stat-thrd.png') }}" alt="" />
-              <p class="stat__sentence">
-                83 выпускника удостоилось медали
-                <strong>“ЗА ОСОБЫЕ УСПЕХИ В УЧЕНИИ”</strong>
-              </p>
-            </div>
-            <div class="stat__block">
-              <img class="stat__img" src="{{ url_for('static', filename='img/stat-frth.png') }}" alt="" />
-              <p class="stat__sentence">
-                235 человек Общее кол-во медалистов
-                <ins>(10% ��т общего количества учеников)</ins>
-              </p>
-            </div>
-          </div>
-          <div class="stat__sec-content">
-            <div class="stat__sec-block">
-              <p class="stat__sec-sentence">
-                Вслед за своими старшими братьями  сестрами поступили в лицей и успешно его окончили 60 человек.
-              </p>
-            </div>
-            <div class="stat__sec-block">
-              <p class="stat__sec-sentence">
-                <strong>Со дня основания лицея</strong> Со дня основания лицея и до сегодняшнего для передают свои знания и 
-                бесценный жизненный опыт
-                <em
-                  >В. Е. Емельянов, Е. А. Родин, Т. Ю. Капшина, О. В. Беспалова.</em
-                >
-                .
-              </p>
+            <div class="product-card">
+              <img src="{{ url_for('static', filename='img/airpods.jpg') }}" alt="AirPods" class="product-image">
+              <h3 class="product-name">AirPods Pro</h3>
+              <p class="product-price">24 990 ₽</p>
+              <button class="buy-button">Купить</button>
             </div>
           </div>
         </div>
       </section>
-      <section class="infrastructure">
+
+      <section class="testimonials">
         <div class="container">
-          <h2 class="section__title-infrast">
-            В лицее есть все для приятного времяпрепровождения
-          </h2>
-          <h3 class="infrastructure__item">
-            Спортивный зал и площадка
-          </h3>
-          <div class="infrastructure__part">
-            <img src="{{ url_for('static', filename='img/licey%202.png') }}" alt="#" class="infrast__part-img1">
-            <img src="{{ url_for('static', filename='img/licey%201.png') }}" alt="#" class="infrast__part-img2">
-            <img src="{{ url_for('static', filename='img/licey%203.png') }}" alt="#" class="infrast__part-img3">
-            <p class="infrast__part-text1">
-              Для ученико��, ведущих спортивный образ жизни, в нашем лицее есть спортивная площадка, где можно играть в баскетбол и футбол, и спортивный зал с различным инвентарем.
-            </p>
-            <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
-          </div>
-          <!-- <img src="img/horizontal-rule-svgrepo-com.svg" alt="#" class="black-line"> -->
-          <div class="infrastructure__part-flex">
-            <div class="infrast__part-text2">
-                <h3 class="infrastructure__item-special">Столовая</h3>
-                <p class="infrast__part-descr">
-                  Наши лицеисты вкусно обедают – или завтракают – в светлой и комфортной столовой.
-                </p>
+          <h2>Отзывы покупателей</h2>
+          <div class="testimonials-slider">
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Отличный магазин! Купил iPhone 15 Pro, очень доволен качеством обслуживания."</p>
+              <p class="testimonial-author">- Александр П.</p>
             </div>
-            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img4">
-          </div>
-          <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
-          <div class="infrastructure__part">
-            <h2 class="infrastructure__item">Компью��ерные классы</h2>
-            <p class="infrast__part-text3">
-              Лицей предлагает удобные кабинеты информатики с мощными компьютерами, графическими планшетами и сенсорными досками.
-            </p>
-            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img5">
-          </div>
-          <img src="{{ url_for('static', filename='img/line.png') }}" alt="#" class="black-line" width="500" height="90">
-          <div class="infrastructure__part">
-            <img src="{{ url_for('static', filename='img/licey%204.png') }}" alt="#" class="infrast__part-img6">
-            <h2 class="infrastructure__item">Актовый зал</h2>
-            <p class="infrast__part-text4">
-              Для проведения различных мероприятий у нашем лицее есть просторный и удобный как для актеров, так и для зрителей актовый зал.
-            </p>
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Быстрая доставка, приятные цены. Рекомендую!"</p>
+              <p class="testimonial-author">- Мария С.</p>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">"Профессиональная консультация и отличный сервис."</p>
+              <p class="testimonial-author">- Дмитрий К.</p>
+            </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="footer">
-      <div class="container footer__container">
-        <div class="footer__link">
-          <p class="link__title">Музей МАОУ ПКЛ</p>
-          <div class="link__container">
-            <a class="link__box" href="#">
-              <img class="link__vk" src="{{ url_for('static', filename='img/vk.jpg') }}" alt="ВКонтакте" />
-            </a>
-            <a href="#">
-              <img class="link__ytube" src="{{ url_for('static', filename='img/ytube.jpg') }}" alt="YouTube" />
-            </a>
-          </div>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <h3>О компании</h3>
+          <p>ONIX HUB - ваш надежный магазин электроники</p>
         </div>
-        <div class="footer__menu">
-          <p class="menu__title">Меню</p>
-          <div class="mini__container">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="#" class="menu__link">Главная</a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">О нас</a>
-              </li>
-
-              <li class="menu__item">
-                <a href="#" class="menu__link">Мы в сетях</a>
-              </li>
-            </ul>
-          </div>
+        <div class="footer-section">
+          <h3>Контакты</h3>
+          <p>Телефон: 8 (800) 555-35-35</p>
+          <p>Email: info@onixhub.ru</p>
         </div>
-        <div class="footer__contact">
-          <p class="contact__title">Контакты</p>
-          <div class="mini__container">
-            <ul class="contact__list">
-              <li class="contact__item">
-                <p class="contact__content">Тел. : (4922)53-26-76</p>
-              </li>
-              <li class="contact__item">
-                <p class="contact__content">Эл. почта: vpkl@mail.ru</p>
-              </li>
-              <li class="contact__item">
-                <p class="contact__content contact__content__flex">
-                  <span>Адрес: Владимир,</span><span>600017,Владимир,</span>
-                  <span>ул. Кирова, д.15</span>
-                </p>
-              </li>
-            </ul>
+        <div class="footer-section">
+          <h3>Социальные сети</h3>
+          <div class="social-links">
+            <a href="#"><img src="{{ url_for('static', filename='img/vk.jpg') }}" alt="VK"></a>
+            <a href="#"><img src="{{ url_for('static', filename='img/telegram.jpg') }}" alt="Telegram"></a>
           </div>
         </div>
       </div>
