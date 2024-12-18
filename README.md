@@ -225,7 +225,7 @@ pytest --cov=app tests/
 ```
 MIT License
 
-Copyright (c) 2024 Your Name
+Copyright (c) 2024 onix
 
 Permission is hereby granted, free of charge...
 ```
