@@ -234,7 +234,3 @@ Permission is hereby granted, free of charge...
 ```
 
 ---
-
-<p align="center">
-  Сделано с ❤️ в России
-</p>
