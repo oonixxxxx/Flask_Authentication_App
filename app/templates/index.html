@@ -11,6 +11,11 @@
   <body id="body">
     <div class="auth-header">
       <div class="container auth-header__container">
+        <nav class="header-nav">
+          <a href="{{ url_for('catalog') }}" class="header-link">Каталог</a>
+          <a href="{{ url_for('catalog') }}" class="header-link">Корзина</a>
+          <a href="{{ url_for('catalog') }}" class="header-link">Новости</a>
+        </nav>
         <div class="auth-header__buttons">
           {% if user_name %}
               <span class="auth-username">{{ user_name }}</span>
@@ -21,14 +26,13 @@
           {% endif %}
         </div>
       </div>
+      <div class="header-divider"></div>
     </div>
 
     <header class="hero-section">
       <div class="container">
         <div class="hero-content">
           <h1>ONIX HUB</h1>
-          <p>Магазин современной техники и электроники</p>
-          <a href="{{ url_for('catalog') }}" class="cta-button">Перейти в каталог</a>
         </div>
       </div>
     </header>
@@ -39,23 +43,23 @@
           <h2>Популярные товары</h2>
           <div class="products-container">
             <div class="product-card">
-              <img src="{{ url_for('static', filename='img/iphone.jpg') }}" alt="iPhone 15" class="product-image">
-              <h3 class="product-name">iPhone 15 Pro</h3>
-              <p class="product-price">от 99 990 ₽</p>
-              <button class="buy-button">Купить</button>
+              <img src="{{ url_for('static', filename='img/iphone.jpg') }}" alt="iPhone 16" class="product-image">
+              <h3 class="product-name">iPhone 16 Pro</h3>
+              <p class="product-price">119 990 ₽</p>
             </div>
             <div class="product-card">
               <img src="{{ url_for('static', filename='img/macbook.jpg') }}" alt="MacBook" class="product-image">
               <h3 class="product-name">MacBook Air M2</h3>
-              <p class="product-price">от 129 990 ₽</p>
-              <button class="buy-button">Купить</button>
+              <p class="product-price">129 990 ₽</p>
             </div>
             <div class="product-card">
               <img src="{{ url_for('static', filename='img/airpods.jpg') }}" alt="AirPods" class="product-image">
               <h3 class="product-name">AirPods Pro</h3>
               <p class="product-price">24 990 ₽</p>
-              <button class="buy-button">Купить</button>
             </div>
+          </div>
+          <div class="catalog-link">
+            <a href="{{ url_for('catalog') }}" class="cta-button">Перейти в каталог</a>
           </div>
         </div>
       </section>
@@ -103,28 +107,66 @@
     </footer>
   </body>
   <script src="{{ url_for('static', filename='modalwindow.js') }}"></script>
+  <script>
+  function redirectToProductPage(url) {
+      window.location.href = url;
+  }
+  </script>
 </html>
 
 <style>
-.products-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
+body {
+    background-color: #1a1a2e;
+    color: #d3d3d3;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.auth-header, .footer {
+    background-color: #2e3b4e;
+    padding: 10px 0;
+}
+
+.auth-btn, .cta-button, .buy-button {
+    background-color: #3b4a6b;
+    color: #d3d3d3;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.auth-btn:hover, .cta-button:hover, .buy-button:hover {
+    background-color: #4a5a7b;
+    transform: scale(1.05);
+}
+
+.auth-username {
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header-divider {
+    height: 1px;
+    background-color: #d3d3d3;
+    margin: 10px 0;
 }
 
 .product-card {
-    width: 250px;
-    padding: 15px;
+    background: #2e3b4e;
+    color: #d3d3d3;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 
 .product-image {
@@ -132,15 +174,80 @@
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .product-name {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
 .product-price {
+    font-size: 1em;
+    font-weight: normal;
+    color: #d3d3d3;
+}
+
+.featured-products h2 {
+    text-align: center;
+    font-size: 2.5em;
     font-weight: bold;
-    color: #2c3e50;
+    color: #d3d3d3;
+    margin-bottom: 30px;
+}
+
+.catalog-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Georgia', serif;
+    color: #a3b1c6;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.header-nav {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.header-link {
+    color: #a3b1c6;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: #d3d3d3;
+}
+
+.testimonials h2, .footer h3 {
+    color: #747474;
+}
+
+.testimonial-text, .testimonial-author {
+    color: #0f0f0f;
+}
+
+.social-links img {
+    filter: brightness(0) invert(1);
+    width: 30px;
+    margin: 0 5px;
+}
+
+.footer-section p {
+    color: #d3d3d3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 </style>
