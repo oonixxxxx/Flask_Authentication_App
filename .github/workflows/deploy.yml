@@ -3,24 +3,28 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.github/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Deploy to Server
+    - name: Deploy to production server
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.SSH_PORT }}
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_SSH_KEY }}
+        port: ${{ secrets.DEPLOY_PORT }}
         script: |
-          cd /path/to/your/project
+          cd ${{ secrets.DEPLOY_PATH }}
           git pull origin main
-          # Добавьте здесь команды для обновления зависимостей и перезапуска сервера
+          source venv/bin/activate
           pip install -r requirements.txt
-          systemctl restart your-service 
+          sudo systemctl restart flask_app
+          sudo systemctl status flask_app 
