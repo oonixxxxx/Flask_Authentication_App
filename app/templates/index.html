@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PKL_museum</title>
+    <title>onixhub</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body id="body">
@@ -77,7 +78,7 @@
               <p class="testimonial-author">- Мария С.</p>
             </div>
             <div class="testimonial-card">
-              <p class="testimonial-text">"Профессиональная консультация и отличный сервис."</p>
+              <p class="testimonial-text">"Профессиональная консультация и отличны�� сервис."</p>
               <p class="testimonial-author">- Дмитрий К.</p>
             </div>
           </div>
@@ -115,139 +116,217 @@
 </html>
 
 <style>
+:root {
+    --primary-color: #2563eb;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+}
+
 body {
-    background-color: #1a1a2e;
-    color: #d3d3d3;
-    font-family: 'Arial', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
     margin: 0;
+    line-height: 1.6;
 }
 
-.auth-header, .footer {
-    background-color: #2e3b4e;
-    padding: 10px 0;
+.auth-header {
+    background-color: var(--surface);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
 }
 
-.auth-btn, .cta-button, .buy-button {
-    background-color: #3b4a6b;
-    color: #d3d3d3;
+.auth-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-btn {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.signup-btn {
+    background-color: var(--primary-color);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
-.auth-btn:hover, .cta-button:hover, .buy-button:hover {
-    background-color: #4a5a7b;
-    transform: scale(1.05);
+.auth-btn:hover {
+    background-color: var(--surface);
+    transform: translateY(-2px);
 }
 
-.auth-username {
-    color: #ffffff;
-    font-size: 1.5em;
-    font-weight: bold;
+.header-link {
+    color: var(--text);
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
 }
 
-.header-divider {
-    height: 1px;
-    background-color: #d3d3d3;
-    margin: 10px 0;
+.header-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
-.product-card {
-    background: #2e3b4e;
-    color: #d3d3d3;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-    padding: 20px;
-    margin: 10px;
+.header-link:hover::after {
+    width: 100%;
+}
+
+.hero-section {
+    padding: 6rem 0;
     text-align: center;
 }
 
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--primary-color), #60a5fa);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.product-card {
+    background: var(--surface);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .product-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
 }
 
 .product-name {
-    margin: 10px 0;
-    font-size: 1.6em;
-    font-weight: bold;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem;
 }
 
 .product-price {
-    font-size: 1em;
-    font-weight: normal;
-    color: #d3d3d3;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0.5rem 1rem 1rem;
 }
 
-.featured-products h2 {
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #d3d3d3;
-    margin-bottom: 30px;
-}
-
-.catalog-link {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.hero-content h1 {
-    font-family: 'Georgia', serif;
-    color: #a3b1c6;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.header-nav {
-    margin-top: 10px;
-    text-align: left;
-}
-
-.header-link {
-    color: #a3b1c6;
-    margin: 0 15px;
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--text);
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s;
+    font-weight: 500;
+    display: inline-block;
+    margin: 2rem 0;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.header-link:hover {
-    color: #d3d3d3;
+.cta-button:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
 }
 
-.testimonials h2, .footer h3 {
-    color: #747474;
+.testimonials {
+    background-color: var(--surface);
+    padding: 4rem 0;
+    margin: 4rem 0;
 }
 
-.testimonial-text, .testimonial-author {
-    color: #0f0f0f;
+.testimonial-card {
+    background-color: var(--background);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-text {
+    color: var(--text);
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.footer {
+    background-color: var(--surface);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--text);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .social-links img {
-    filter: brightness(0) invert(1);
-    width: 30px;
-    margin: 0 5px;
+    width: 24px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
 }
 
-.footer-section p {
-    color: #d3d3d3;
+.social-links img:hover {
+    opacity: 1;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .auth-header__container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .header-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 </style>

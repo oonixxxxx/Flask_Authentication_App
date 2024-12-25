@@ -1,14 +1,24 @@
+# Build stage
+FROM python:3.9-slim as builder
+
+WORKDIR /app
+COPY requirements.txt .
+
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
+
+# Final stage
 FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY --from=builder /app/wheels /wheels
+COPY --from=builder /app/requirements.txt .
+
+RUN pip install --no-cache /wheels/*
 
 COPY . .
 
-ENV FLASK_APP=run.py
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
 
-EXPOSE 5000
-
-CMD ["flask", "run", "--host=0.0.0.0"] 
+ENTRYPOINT ["./docker-entrypoint.sh"] 
