@@ -1,6 +1,7 @@
 from functools import wraps
 from app.utils.exceptions import BaseAPIException
-from flask import jsonify
+from flask import jsonify, abort
+from flask_login import current_user
 
 def handle_exceptions(f):
     """
@@ -20,3 +21,12 @@ def handle_exceptions(f):
             # Обработка непредвиденных исключений
             return jsonify(error="Internal server error"), 500
     return decorated 
+
+def admin_required(f):
+    """Декоратор для проверки прав администратора"""
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not current_user.is_authenticated or not current_user.is_admin:
+            abort(403)
+        return f(*args, **kwargs)
+    return decorated_function 

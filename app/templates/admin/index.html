@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="admin-panel">
+    <h1>Панель администратора</h1>
+    <div class="admin-menu">
+        <a href="{{ url_for('admin.products') }}" class="btn">Управление товарами</a>
+        <a href="{{ url_for('admin.users') }}" class="btn">Управление пользователями</a>
+    </div>
+</div>
+{% endblock %} 
