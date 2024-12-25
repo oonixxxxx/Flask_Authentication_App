@@ -12,10 +12,11 @@ def login():
         
         if user and user.check_password(password):
             login_user(user)
-            flash('Успешный вход')
+            flash('Успешный вход', 'success')
             return redirect(url_for('main.index'))
         
-        flash('Неверный email или пароль')
+        flash('Неверный email или пароль', 'error')
+        return render_template('auth/login.html')
     return render_template('auth/login.html')
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -28,4 +29,5 @@ def signup():
 @login_required
 def logout():
     logout_user()
+    flash('Вы успешно вышли из системы', 'success')
     return redirect(url_for('main.index')) 
