@@ -1,484 +1,281 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONIX HUB - Documentation</title>
-    <style>
-        :root {
-            --primary: #2563eb;
-            --background: #0f172a;
-            --surface: #1e293b;
-            --text: #e2e8f0;
-            --text-secondary: #94a3b8;
-        }
+<div align="center">
+  <imgsrc="app/static/img/logo.png" alt="ONIX HUB Logo" width="200"/>
+ 
+ # 🛍️ ONIX HUB
+ 
+ *Современная платформа электронной коммерции на Flask*
+  [![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+ [![License](https://img.shields.io/badge/license-MIT-green.svg?style=for-the-badge)](LICENSE)
+ [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg?style=for-the-badge&logo=github-actions&logoColor=white)](tests)
+ [![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg?style=for-the-badge&logo=codecov&logoColor=white)](coverage)
+/div>
+---
+<p align="center">
+ <a href="#особенности">Особенности</a> •
+ <a href="#технологии">Технологии</a> •
+ <a href="#установка">Установка</a> •
+ <a href="#api-документация">API</a> •
+ <a href="#развертывание">Развертывание</a>
+/p>
+---
+## 📚 О проекте
+> ONIX HUB - это современная платформа электронной коммерции, построенная с использованием Flask и современных технологий веб-разработки. Проект реализует полноценный интернет-магазин с расширенной функциональностью.
+## ✨ Особенности
+<table>
+tr>
+td>
+### 🛍️ Магазин
+- 📋 Каталог продуктов
+ 🏷️ Категории товаров
+ 🛒 Корзина покупок
+ 📦 Оформление заказов
+</td>
+td>
+### 🔐 Безопасность
+- 🔑 JWT авторизация
+ 🛡️ Защита от CSRF
+ ⚡ Rate limiting
+ 🔒 Безопасные заголовки
+</td>
+/tr>
+tr>
+td>
+### ⚡ Производительность
+- 💾 Redis кэширование
+ 📊 Celery для задач
+ 🚀 Nginx как прокси
+ 🐳 Docker контейнеры
+</td>
+td>
+### 🔧 Разработка
+- 📐 Чистая архитектура
+ 📝 Type hints
+ 🧪 Автотесты
+ 🔄 CI/CD pipeline
+</td>
+/tr>
+/table>
+## 🛠 Технологии
+<div align="center">
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org)
+</div>
+## 📁 Структура проекта
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background: var(--background);
-            color: var(--text);
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+<div align="center">
 
-        .header {
-            text-align: center;
-            padding: 4rem 0;
-            background: var(--surface);
-            margin-bottom: 2rem;
-        }
+![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
+![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)
 
-        .header h1 {
-            font-size: 3rem;
-            margin: 0;
-            background: linear-gradient(to right, var(--primary), #60a5fa);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
+</div>
 
-        .badges {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 1rem 0;
-        }
+## 📚 О проекте
 
-        .badge {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background: var(--surface);
-            color: var(--text);
-            text-decoration: none;
-        }
+ONIX HUB - это современная платформа электронной коммерции, построенная с использованием Flask и современных технологий веб-разработки. Проект реализует полноценный интернет-магазин с расширенной функциональностью.
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
+## ✨ Особенности
 
-        .feature-card {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+### 🛍️ Магазин
+- Каталог продуктов
+- Категории товаров
+- Корзина покупок
+- Оформление заказов
 
-        .feature-card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
+### 🔐 Безопасность
+- JWT авторизация
+- Защита от CSRF
+- Rate limiting
+- Безопасные заголовки
 
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
+### ⚡ Производительность
+- Redis ��эширование
+- Celery для задач
+- Nginx как прокси
+- Docker контейнеры
 
-        .tech-item {
-            text-align: center;
-            width: 96px;
-        }
+### 🔧 Разработка
+- Чистая архитектура
+- Type hints
+- Автотесты
+- CI/CD pipeline
 
-        .tech-item img {
-            width: 48px;
-            height: 48px;
-        }
+## 🛠 Технологии
 
-        .section {
-            margin: 4rem 0;
-        }
+- **Backend**: Python 3.9, Flask
+- **Database**: PostgreSQL
+- **Caching**: Redis
+- **Task Queue**: Celery
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Container**: Docker
+- **Web Server**: Nginx
+- **Authentication**: JWT
 
-        .section h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
+## 📁 Структура проекта 
 
-        code {
-            display: block;
-            background: var(--surface);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            margin: 1rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-
-        .contact-link {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            background: var(--surface);
-            color: var(--text);
-            text-decoration: none;
-            transition: transform 0.2s;
-        }
-
-        .contact-link:hover {
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--surface);
-            margin-top: 4rem;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1>🛍️ ONIX HUB</h1>
-            <p>Современная платформа электронной коммерции на Flask</p>
-            <div class="badges">
-                <span class="badge">Python 3.9+</span>
-                <span class="badge">MIT License</span>
-                <span class="badge">Tests Passing</span>
-                <span class="badge">95% Coverage</span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="section">
-            <h2>✨ Особенности</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>🛍️ Магазин</h3>
-                    <ul>
-                        <li>Каталог продуктов</li>
-                        <li>Категории товаров</li>
-                        <li>Корзина покупок</li>
-                        <li>Оформление заказов</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>🔐 Безопасность</h3>
-                    <ul>
-                        <li>JWT авторизация</li>
-                        <li>Защита от CSRF</li>
-                        <li>Rate limiting</li>
-                        <li>Безопасные заголовки</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>⚡ Производительность</h3>
-                    <ul>
-                        <li>Redis кэширование</li>
-                        <li>Celery для задач</li>
-                        <li>Nginx как прокси</li>
-                        <li>Docker контейнеры</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>🔧 Разработка</h3>
-                    <ul>
-                        <li>Чистая архитектура</li>
-                        <li>Type hints</li>
-                        <li>Автотесты</li>
-                        <li>CI/CD pipeline</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🛠 Технологии</h2>
-            <div class="tech-stack">
-                <div class="tech-item">
-                    <img src="https://skillicons.dev/icons?i=python" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="tech-item">
-                    <img src="https://skillicons.dev/icons?i=flask" alt="Flask">
-                    <p>Flask</p>
-                </div>
-                <div class="tech-item">
-                    <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL">
-                    <p>PostgreSQL</p>
-                </div>
-                <div class="tech-item">
-                    <img src="https://skillicons.dev/icons?i=redis" alt="Redis">
-                    <p>Redis</p>
-                </div>
-                <div class="tech-item">
-                    <img src="https://skillicons.dev/icons?i=docker" alt="Docker">
-                    <p>Docker</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>📝 API Документация</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Метод</th>
-                        <th>Endpoint</th>
-                        <th>Описание</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>GET</td>
-                        <td>/api/products</td>
-                        <td>Список продуктов</td>
-                    </tr>
-                    <tr>
-                        <td>GET</td>
-                        <td>/api/products/{id}</td>
-                        <td>Детали продукта</td>
-                    </tr>
-                    <tr>
-                        <td>POST</td>
-                        <td>/api/products</td>
-                        <td>Создать продукт</td>
-                    </tr>
-                    <tr>
-                        <td>PUT</td>
-                        <td>/api/products/{id}</td>
-                        <td>Обновить продукт</td>
-                    </tr>
-                    <tr>
-                        <td>DELETE</td>
-                        <td>/api/products/{id}</td>
-                        <td>Удалить продукт</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="section">
-            <h2>📦 Установка</h2>
-            <code>
-# Клонирование репозитория
-git clone https://github.com/your-username/onixhub.git
-cd onixhub
-
-# Запуск через Docker
-docker-compose up -d
-            </code>
-        </section>
-
-        <section class="section">
-            <h2>📞 Контакты</h2>
-            <div class="contact-links">
-                <a href="https://t.me/onixexe" class="contact-link">Telegram</a>
-                <a href="https://github.com/oonixxxxx" class="contact-link">GitHub</a>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>📁 Структура проекта</h2>
-            <code>
 project/
 ├── app/
-│   ├── __init__.py           # Инициализация Flask приложения
-│   ├── config.py             # Конфигурация приложения
-│   ├── models/               # Модели данных
-│   │   ├── __init__.py
-│   │   ├── mixins.py        # Миксины для моделей (TimestampMixin, SoftDeleteMixin)
-│   │   └── product.py       # Модель Product
-│   ├── services/            # Бизнес-логика
-│   │   ├── __init__.py
-│   │   └── product_service.py # Сервис для работы с продуктами
-│   ├── static/              # Статические файлы
-│   │   ├── css/
-│   │   │   └── style.css    # Основные стили
-│   │   ├── js/
-│   │   │   └── jquery.js    # JavaScript библиотеки
-│   │   └── img/            # Изображения
-│   ├── templates/           # Шаблоны
-│   │   ├── base.html       # Базовый шаблон
-│   │   ├── components/     # Компоненты
-│   │   │   ├── header.html
-│   │   │   └── footer.html
-│   │   └── pages/         # Страницы
-│   │       └── index.html
-│   └── utils/             # Утилиты
-│       ├── decorators.py  # Декораторы для API
-│       └── exceptions.py  # Обработчики ошибок
+│ ├── init.py # Инициализация Flask приложения
+│ ├── config.py # Конфигурация приложения
+│ ├── models/ # Модели данных
+│ │ ├── mixins.py # Миксины для моделей
+│ │ └── product.py # Модель Product
+│ ├── services/ # Бизнес-логика
+│ │ └── product_service.py
+│ ├── static/ # Статические файлы
+│ │ ├── css/
+│ │ │ └── style.css
+│ │ ├── js/
+│ │ └── img/
+│ ├── templates/ # Шаблоны
+│ │ ├── base.html
+│ │ ├── components/
+│ │ └── pages/
+│ └── utils/ # Утилиты
+│ ├── decorators.py
+│ └── exceptions.py
 ├── docker/
-│   ├── Dockerfile        # Конфигурация Docker
-│   └── docker-compose.yml # Оркестрация контейнеров
-├── tests/               # Тесты
-├── .env                # Переменные окружения
-└── requirements.txt    # Зависимости проекта
-            </code>
-        </section>
+│ ├── Dockerfile
+│ └── docker-compose.yml
+├── tests/ # Тесты
+├── .env # Переменные окружения
+└── requirements.txt # Зависимости
 
-        <section class="section">
-            <h2>🔧 Конфигурация</h2>
-            <div class="feature-card">
-                <h3>Переменные окружения (.env)</h3>
-                <code>
-# Основные настройки
+## 📦 Установка
+
+### Через Docker (рекомендуется)
+
+bash
+Клонирование репозитория
+git clone https://github.com/your-username/onixhub.git
+cd onixhub
+Настройка окружения
+cp .env.example .env
+Отредактируйте .env под свои нужды
+Запуск через Docker
+docker-compose up -d
+
+### Локальная установка
+
+bash
+Создание виртуального окружения
+python -m venv venv
+source venv/bin/activate # Linux/macOS
+venv\Scripts\activate # Windows
+Установка зависимостей
+pip install -r requirements.txt
+Настройка базы данных
+flask db upgrade
+Запуск
+flask run
+
+
+## 📝 API Документация
+
+| Метод | Endpoint | Описание |
+|-------|----------|----------|
+| GET | /api/products | Список продуктов |
+| GET | /api/products/{id} | Детали продукта |
+| POST | /api/products | Создать продукт |
+| PUT | /api/products/{id} | Обновить продукт |
+| DELETE | /api/products/{id} | Удалить продукт |
+
+## 🔧 Конфигурация
+
+Пример `.env` файла:
+
+env
+Основные настройки
 FLASK_APP=run.py
 FLASK_ENV=development
 SECRET_KEY=your-secret-key
 JWT_SECRET_KEY=your-jwt-secret
-
-# База данных
+База данных
 DATABASE_URL=postgresql://user:password@localhost/dbname
 DEV_DATABASE_URL=postgresql://user:password@localhost/dev_dbname
-
-# Redis
+Redis
 REDIS_URL=redis://localhost:6379/0
-
-# Мониторинг
+Мониторинг
 SENTRY_DSN=your-sentry-dsn
-                </code>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>🔄 CI/CD Pipeline</h2>
-            <div class="feature-card">
-                <h3>GitHub Actions Workflow</h3>
-                <code>
-name: CI/CD
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+## 🧪 Тестирование
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:13
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-    - name: Run tests
-      run: pytest --cov=app tests/
+bash
+Запуск тестов
+pytest
+С отчётом о покрытии
+pytest --cov=app tests/
 
-  deploy:
-    needs: test
-    if: github.ref == 'refs/heads/main'
-    steps:
-    - name: Deploy to production
-      uses: appleboy/ssh-action@master
-                </code>
-            </div>
-        </section>
 
-        <section class="section">
-            <h2>🐳 Docker</h2>
-            <div class="feature-card">
-                <h3>Сервисы</h3>
-                <ul>
-                    <li>Web (Flask application)</li>
-                    <li>PostgreSQL (База данных)</li>
-                    <li>Redis (Кэширование)</li>
-                    <li>Celery (Асинхронные задачи)</li>
-                    <li>Nginx (Обратный прокси)</li>
-                </ul>
-            </div>
-        </section>
+## 📈 Мониторинг
 
-        <section class="section">
-            <h2>📊 Мониторинг и логирование</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Healthcheck</h3>
-                    <p>Endpoint: <code>/health</code></p>
-                    <p>Проверяет:</p>
-                    <ul>
-                        <li>Доступность базы данных</li>
-                        <li>Подключение к Redis</li>
-                        <li>Состояние Celery</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Логирование</h3>
-                    <ul>
-                        <li>Структурированные JSON логи</li>
-                        <li>Ротация логов</li>
-                        <li>Различные уровни логирования</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+### Healthcheck
+- Endpoint: `/health`
+- Проверяет:
+  - Доступность базы данных
+  - Подключение к Redis
+  - Состояние Celery
 
-        <section class="section">
-            <h2>🔒 Безопасность</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Аутентификация</h3>
-                    <ul>
-                        <li>JWT токены</li>
-                        <li>Защита от брутфорса</li>
-                        <li>Безопасное хранение паролей</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Защита</h3>
-                    <ul>
-                        <li>CSRF токены</li>
-                        <li>Rate limiting</li>
-                        <li>Secure headers</li>
-                        <li>SQL injection protection</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+### Логирование
+- Структурированные JSON логи
+- Ротация логов
+- Различные уровни логирования
+- Интеграция с Sentry
 
-        <section class="section">
-            <h2>🚀 Развертывание</h2>
-            <div class="feature-card">
-                <h3>Production</h3>
-                <code>
-# Обновление до последней версии
+## 🚀 Развертывание
+
+### Production
+
+bash
+Обновление до последней версии
 git pull origin main
-
-# Сборка и запуск контейнеров
+Сборка и запуск контейнеров
 docker-compose -f docker-compose.prod.yml up -d --build
-
-# Применение миграций
+Применение миграций
 docker-compose exec web flask db upgrade
-                </code>
-            </div>
-        </section>
 
-    </main>
 
-    <footer>
-        <p>Made with ❤️ by ONIX</p>
-    </footer>
-</body>
-</html> 
+### CI/CD Pipeline
+
+- **Тестирование**:
+  - Запуск unit-тестов
+  - Проверка типов
+  - Анализ кода
+- **Развертывание**:
+  - Автоматическая сборка Docker образов
+  - Развертывание в production
+  - Мониторинг развертывания
+
+## 📞 Контакты
+
+- Telegram: [@onixexe](https://t.me/onixexe)
+- GitHub: [@oonixxxxx](https://github.com/oonixxxxx)
+
+## 📄 Лицензия
+
+MIT License
+
+Copyright (c) 2024 ONIX HUB
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+---
+
+<div align="center">
+Made with ❤️ by ONIX
+</div>
