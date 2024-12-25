@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 from app import create_app, db
-from app.models import User
+from app.models import User, Product
 
 @pytest.fixture
 def app():
@@ -9,6 +9,7 @@ def app():
     
     with app.app_context():
         db.create_all()
+        
         # Создаем тестового пользователя
         user = User(
             email='test@example.com',
@@ -16,6 +17,25 @@ def app():
         )
         user.set_password('password123')
         db.session.add(user)
+        
+        # Создаем тестовые продукты
+        products = [
+            Product(
+                name='iPhone 16 Pro',
+                price=119990,
+                description='Новый iPhone',
+                is_featured=True,
+                stock=10
+            ),
+            Product(
+                name='MacBook Air M2',
+                price=129990,
+                description='Ноутбук Apple',
+                is_featured=True,
+                stock=5
+            )
+        ]
+        db.session.bulk_save_objects(products)
         db.session.commit()
         
         yield app
