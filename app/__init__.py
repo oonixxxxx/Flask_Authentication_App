@@ -14,6 +14,8 @@ cache = Cache()
 jwt = JWTManager()
 celery = Celery()
 login_manager = LoginManager()
+login_manager.login_view = 'auth.login'
+login_manager.login_message = 'Пожалуйста, войдите для доступа к этой странице.'
 
 def create_app(config_name='development'):
     app = Flask(__name__)
