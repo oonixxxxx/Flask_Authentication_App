@@ -24,6 +24,16 @@ class User(UserMixin, db.Model, TimestampMixin, SoftDeleteMixin):
     def __repr__(self):
         return f'<User {self.username}>'
 
+    def to_dict(self):
+        """Сериализация пользователя в словарь"""
+        return {
+            'id': self.id,
+            'email': self.email,
+            'username': self.username,
+            'is_admin': self.is_admin,
+            'created_at': self.created_at.isoformat() if self.created_at else None
+        }
+
 @login_manager.user_loader
 def load_user(id):
     """Загрузка пользователя для Flask-Login"""
