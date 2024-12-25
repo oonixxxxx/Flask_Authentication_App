@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from flask_caching import Cache
 from flask_jwt_extended import JWTManager
 from celery import Celery
-from .config import config
+from app.config import config
 
 # Инициализация расширений Flask
 db = SQLAlchemy()         # ORM для работы с базой данных

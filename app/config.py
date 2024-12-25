@@ -32,10 +32,18 @@ class DevelopmentConfig(BaseConfig):
 class ProductionConfig(BaseConfig):
     """Конфигурация для продакшена"""
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL') 
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 class TestingConfig(BaseConfig):
     """Конфигурация для тестирования"""
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-    WTF_CSRF_ENABLED = False 
+    WTF_CSRF_ENABLED = False
+
+# Словарь доступных конфигураций
+config = {
+    'development': DevelopmentConfig,
+    'production': ProductionConfig,
+    'testing': TestingConfig,
+    'default': DevelopmentConfig
+} 
