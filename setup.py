@@ -10,5 +10,6 @@ setup(
         'Flask-Migrate==4.0.5',
         'Flask-Caching==2.1.0',
         'Flask-JWT-Extended==4.6.0',
+        'Flask-Login==0.6.3',
     ]
 ) 
