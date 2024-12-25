@@ -5,7 +5,7 @@ def test_login_page(client):
     """Тест страницы входа"""
     response = client.get('/login')
     assert response.status_code == 200
-    assert b'Войти' in response.data
+    assert 'Войти' in response.get_data(as_text=True)
 
 def test_successful_login(client):
     """Тест успешного входа"""
@@ -14,7 +14,7 @@ def test_successful_login(client):
         'password': 'password123'
     }, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Успешный вход' in response.data
+    assert 'Успешный вход' in response.get_data(as_text=True)
 
 def test_invalid_login(client):
     """Тест неудачного входа"""
@@ -22,4 +22,4 @@ def test_invalid_login(client):
         'email': 'wrong@example.com',
         'password': 'wrongpass'
     }, follow_redirects=True)
-    assert b'Неверный email или пароль' in response.data 
+    assert 'Неверный email или пароль' in response.get_data(as_text=True) 

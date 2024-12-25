@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 import pytest
@@ -9,11 +10,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 @pytest.fixture
 def app():
+    """Создание тестового приложения"""
     app = create_app('testing')
     
     with app.app_context():
         db.create_all()
-        # Создаем тестовые данные
         create_test_data()
         yield app
         db.session.remove()
@@ -21,10 +22,12 @@ def app():
 
 @pytest.fixture
 def client(app):
+    """Тестовый клиент"""
     return app.test_client()
 
 @pytest.fixture
 def runner(app):
+    """Тестовый CLI runner"""
     return app.test_cli_runner()
 
 def create_test_data():
