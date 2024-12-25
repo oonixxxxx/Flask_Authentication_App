@@ -11,7 +11,9 @@ def index():
 
 @main.route('/catalog')
 def catalog():
-    return render_template('pages/catalog.html', title='Каталог')
+    """Страница каталога"""
+    products = product_service.get_all_products()
+    return render_template('pages/catalog.html', title='Каталог', products=products)
 
 @main.route('/product/<int:product_id>')
 def product(product_id):

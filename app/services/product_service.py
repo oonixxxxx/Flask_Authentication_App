@@ -28,3 +28,7 @@ class ProductService:
             category_id=category_id,
             deleted_at=None
         ).all() 
+    
+    def get_all_products(self) -> List[Product]:
+        """Получает список всех активных продуктов"""
+        return Product.query.filter_by(deleted_at=None).order_by(Product.name).all() 

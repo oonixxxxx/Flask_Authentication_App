@@ -15,6 +15,8 @@ def test_catalog_page(client):
     assert 'Каталог' in html
     assert 'iPhone 16 Pro' in html
     assert 'MacBook Air M2' in html
+    assert '119990' in html
+    assert '129990' in html
 
 def test_product_page(client):
     """Тест страницы продукта"""
