@@ -7,4 +7,16 @@ admin = Blueprint('admin', __name__, url_prefix='/admin')
 @admin_required
 def index():
     """Главная страница админки"""
-    return render_template('admin/index.html') 
+    return render_template('admin/index.html')
+
+@admin.route('/products')
+@admin_required
+def products():
+    """Управление товарами"""
+    return render_template('admin/products.html')
+
+@admin.route('/users')
+@admin_required
+def users():
+    """Управление пользователями"""
+    return render_template('admin/users.html') 
