@@ -6,7 +6,9 @@ def test_get_products(client):
     assert response.status_code == 200
     data = json.loads(response.data)
     assert len(data) == 2
-    assert data[0]['name'] == 'iPhone 16 Pro'
+    products = {p['name']: p for p in data}
+    assert 'iPhone 16 Pro' in products
+    assert products['iPhone 16 Pro']['price'] == 119990
 
 def test_get_product(client):
     """Тест API получения одного продукта"""
@@ -14,6 +16,7 @@ def test_get_product(client):
     assert response.status_code == 200
     data = json.loads(response.data)
     assert data['name'] == 'iPhone 16 Pro'
+    assert data['price'] == 119990
 
 def test_product_not_found(client):
     """Тест получения несуществующего продукта"""

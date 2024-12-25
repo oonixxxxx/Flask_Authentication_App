@@ -3,14 +3,18 @@ def test_index_page(client):
     response = client.get('/')
     assert response.status_code == 200
     html = response.get_data(as_text=True)
-    assert 'ONIX HUB' in html
+    assert 'Рекомендуемые товары' in html
     assert 'iPhone 16 Pro' in html
+    assert '119990' in html
 
 def test_catalog_page(client):
     """Тест страницы каталога"""
     response = client.get('/catalog')
     assert response.status_code == 200
-    assert 'Каталог' in response.get_data(as_text=True)
+    html = response.get_data(as_text=True)
+    assert 'Каталог' in html
+    assert 'iPhone 16 Pro' in html
+    assert 'MacBook Air M2' in html
 
 def test_product_page(client):
     """Тест страницы продукта"""
@@ -18,4 +22,5 @@ def test_product_page(client):
     assert response.status_code == 200
     html = response.get_data(as_text=True)
     assert 'iPhone 16 Pro' in html
-    assert '119990' in html 
+    assert '119990' in html
+    assert 'Новый iPhone' in html 
