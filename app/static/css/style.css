@@ -1,0 +1,12 @@
+.project-structure {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre;
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px;
+} 

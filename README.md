@@ -80,88 +80,38 @@
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org)
 </div>
 
-## 📁 Структура проекта
-
-
-<div align="center">
-
-![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)
-![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen.svg)
-
-</div>
-
-## 📚 О проекте
-
-ONIX HUB - это современная платформа электронной коммерции, построенная с использованием Flask и современных технологий веб-разработки. Проект реализует полноценный интернет-магазин с расширенной функциональностью.
-
-## ✨ Особенности
-
-### 🛍️ Магазин
-- Каталог продуктов
-- Категории товаров
-- Корзина покупок
-- Оформление заказов
-
-### 🔐 Безопасность
-- JWT авторизация
-- Защита от CSRF
-- Rate limiting
-- Безопасные заголовки
-
-### ⚡ Производительность
-- Redis кэширование
-- Celery для задач
-- Nginx как прокси
-- Docker контейнеры
-
-### 🔧 Разработка
-- Чистая архитектура
-- Type hints
-- Автотесты
-- CI/CD pipeline
-
-## 🛠 Технологии
-
-- **Backend**: Python 3.9, Flask
-- **Database**: PostgreSQL
-- **Caching**: Redis
-- **Task Queue**: Celery
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Container**: Docker
-- **Web Server**: Nginx
-- **Authentication**: JWT
-
 ## 📁 Структура проекта 
 
+<div align="center">
+<pre class="project-structure">
 project/
 ├── app/
-│ ├── init.py # Инициализация Flask приложения
-│ ├── config.py # Конфигурация приложения
-│ ├── models/ # Модели данных
-│ │ ├── mixins.py # Миксины для моделей
-│ │ └── product.py # Модель Product
-│ ├── services/ # Бизнес-логика
-│ │ └── product_service.py
-│ ├── static/ # Статические файлы
-│ │ ├── css/
-│ │ │ └── style.css
-│ │ ├── js/
-│ │ └── img/
-│ ├── templates/ # Шаблоны
-│ │ ├── base.html
-│ │ ├── components/
-│ │ └── pages/
-│ └── utils/ # Утилиты
-│ ├── decorators.py
-│ └── exceptions.py
+│   ├── __init__.py           # Инициализация Flask приложения
+│   ├── config.py             # Конфигурация приложения
+│   ├── models/               # Модели данных
+│   │   ├── mixins.py        # Миксины для моделей
+│   │   └── product.py       # Модель Product
+│   ├── services/            # Бизнес-логика
+│   │   └── product_service.py
+│   ├── static/              # Статические файлы
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── img/
+│   ├── templates/           # Шаблоны
+│   │   ├── base.html
+│   │   ├── components/
+│   │   └── pages/
+│   └── utils/              # Утилиты
+│       ├── decorators.py
+│       └── exceptions.py
 ├── docker/
-│ ├── Dockerfile
-│ └── docker-compose.yml
-├── tests/ # Тесты
-├── .env # Переменные окружения
-└── requirements.txt # Зависимости
+│   ├── Dockerfile
+│   └── docker-compose.yml
+├── tests/                  # Тесты
+├── .env                    # Переменные окружения
+└── requirements.txt        # Зависимости
+</pre>
+</div>
 
 ## 📦 Установка
 
@@ -265,7 +215,7 @@ docker-compose exec web flask db upgrade
   - Проверка типов
   - Анализ кода
 - **Развертывание**:
-  - Автоматическая сборка Docker образов
+  - Автоматическая сборка Docker образо��
   - Развертывание в production
   - Мониторинг развертывания
 
