@@ -1,12 +1,14 @@
+import os
+import sys
 import pytest
 from app import create_app, db
+
+# Добавляем путь к корневой директории проекта
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 @pytest.fixture
 def app():
     app = create_app('testing')
-    
-    # Используем SQLite в памяти для тестов
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
     
     with app.app_context():
         db.create_all()
