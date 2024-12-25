@@ -1,0 +1,13 @@
+<header class="header">
+    <nav>
+        <a href="{{ url_for('main.index') }}" class="logo">ONIX HUB</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('main.catalog') }}">Каталог</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}">Выйти</a></li>
+            {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Войти</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header> 

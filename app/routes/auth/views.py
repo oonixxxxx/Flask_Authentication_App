@@ -6,7 +6,16 @@ from app.models import User
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        return redirect(url_for('main.index'))
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user = User.query.filter_by(email=email).first()
+        
+        if user and user.check_password(password):
+            login_user(user)
+            flash('Успешный вход')
+            return redirect(url_for('main.index'))
+        
+        flash('Неверный email или пароль')
     return render_template('auth/login.html')
 
 @auth.route('/signup', methods=['GET', 'POST'])

@@ -3,13 +3,13 @@ from flask_login import current_user
 
 def test_login_page(client):
     """Тест страницы входа"""
-    response = client.get('/login')
+    response = client.get('/auth/login')
     assert response.status_code == 200
     assert 'Войти' in response.get_data(as_text=True)
 
 def test_successful_login(client):
     """Тест успешного входа"""
-    response = client.post('/login', data={
+    response = client.post('/auth/login', data={
         'email': 'test@example.com',
         'password': 'password123'
     }, follow_redirects=True)
@@ -18,7 +18,7 @@ def test_successful_login(client):
 
 def test_invalid_login(client):
     """Тест неудачного входа"""
-    response = client.post('/login', data={
+    response = client.post('/auth/login', data={
         'email': 'wrong@example.com',
         'password': 'wrongpass'
     }, follow_redirects=True)

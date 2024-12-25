@@ -20,3 +20,13 @@ class Product(db.Model, TimestampMixin, SoftDeleteMixin):
     
     def __repr__(self):
         return f'<Product {self.name}>' 
+
+    def to_dict(self):
+        """Сериализация продукта в словарь"""
+        return {
+            'id': self.id,
+            'name': self.name,
+            'price': self.price,
+            'description': self.description,
+            'is_in_stock': self.is_in_stock
+        } 
