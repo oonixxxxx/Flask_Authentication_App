@@ -3,42 +3,34 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_caching import Cache
 from flask_jwt_extended import JWTManager
+from flask_login import LoginManager
 from celery import Celery
 from app.config import config
 
-# Инициализация расширений Flask
-db = SQLAlchemy()         # ORM для работы с базой данных
-migrate = Migrate()       # Управление миграциями БД
-cache = Cache()          # Система кэширования
-jwt = JWTManager()       # Управление JWT токенами
-celery = Celery()        # Очередь задач для асинхронных операций
+# Инициализация расширений
+db = SQLAlchemy()
+migrate = Migrate()
+cache = Cache()
+jwt = JWTManager()
+celery = Celery()
+login_manager = LoginManager()
 
 def create_app(config_name='development'):
-    """
-    Фабричная функция для создания экземпляра Flask приложения
-    Args:
-        config_name (str): Имя конфигурации ('development', 'production', 'testing')
-    Returns:
-        Flask: Настроенное Flask приложение
-    """
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
-    # Инициализация всех расширений с приложением
+    # Инициализация расширений
     db.init_app(app)
     migrate.init_app(app, db)
     cache.init_app(app)
     jwt.init_app(app)
+    login_manager.init_app(app)
     
-    # Настройка Celery для асинхронных задач
+    # Настройка Celery
     celery.conf.update(app.config)
     
-    # Регистрация модулей приложения
+    # Регистрация blueprints
     from .routes import register_blueprints
     register_blueprints(app)
-    
-    # Регистрация обработчиков ошибок
-    from .errors import register_error_handlers
-    register_error_handlers(app)
     
     return app
