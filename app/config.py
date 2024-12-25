@@ -39,6 +39,7 @@ class TestingConfig(BaseConfig):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
     WTF_CSRF_ENABLED = False
+    CACHE_TYPE = 'simple'  # Используем простое кэширование для тестов
 
 # Словарь доступных конфигураций
 config = {

@@ -1,20 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
-    <section class="hero-section">
-        {% include 'components/hero.html' %}
-    </section>
-    
-    <section class="featured-products">
-        <div class="container">
-            <h2>Популярные товары</h2>
-            <div class="products-container">
-                {% for product in featured_products %}
-                    {% include 'components/product_card.html' %}
-                {% endfor %}
-            </div>
+<h1>ONIX HUB</h1>
+<div class="products">
+    {% for product in featured_products %}
+        <div class="product">
+            <h2>{{ product.name }}</h2>
         </div>
-    </section>
-</main>
+    {% endfor %}
+</div>
 {% endblock %} 

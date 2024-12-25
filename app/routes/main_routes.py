@@ -1,11 +1,16 @@
-from flask import render_template
-from . import main
-from app.services.product_service import ProductService
+from flask import render_template, Blueprint
 
-product_service = ProductService()
+main = Blueprint('main', __name__)
+product_service = None  # Инициализируем позже
 
 @main.route('/')
 def index():
-    featured_products = product_service.get_featured_products()
-    return render_template('pages/index.html', 
-                         featured_products=featured_products) 
+    return render_template('pages/index.html')
+
+@main.route('/catalog')
+def catalog():
+    return render_template('pages/catalog.html')
+
+@main.route('/product/<int:product_id>')
+def product(product_id):
+    return render_template('pages/product.html') 
