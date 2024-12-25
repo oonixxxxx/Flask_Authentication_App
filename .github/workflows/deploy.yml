@@ -14,17 +14,18 @@ jobs:
     environment: production
     
     steps:
-    - name: Deploy to production server
+    - name: Deploy to Docker host
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.DEPLOY_HOST }}
-        username: ${{ secrets.DEPLOY_USER }}
-        key: ${{ secrets.DEPLOY_SSH_KEY }}
-        port: ${{ secrets.DEPLOY_PORT }}
+        host: ${{ secrets.DOCKER_HOST }}
+        username: ${{ secrets.DOCKER_USER }}
+        key: ${{ secrets.DOCKER_SSH_KEY }}
+        port: 22
         script: |
-          cd ${{ secrets.DEPLOY_PATH }}
-          git pull origin main
-          source venv/bin/activate
-          pip install -r requirements.txt
-          sudo systemctl restart flask_app
-          sudo systemctl status flask_app 
+          cd ${{ secrets.DOCKER_APP_PATH }}
+          git fetch origin main
+          git reset --hard origin/main
+          docker-compose down
+          docker-compose build --no-cache
+          docker-compose up -d
+          docker system prune -f 
