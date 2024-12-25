@@ -2,15 +2,14 @@
 <html lang="ru">
 <head>
     {% include 'components/head.html' %}
-    {% block extra_css %}{% endblock %}
 </head>
 <body>
     {% include 'components/header.html' %}
     
-    {% block content %}{% endblock %}
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
     
     {% include 'components/footer.html' %}
-    
-    {% block extra_js %}{% endblock %}
 </body>
 </html> 

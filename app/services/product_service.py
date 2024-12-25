@@ -16,8 +16,8 @@ class ProductService:
     
     def get_product_by_id(self, product_id: int) -> Optional[Product]:
         """Получает продукт по ID"""
-        product = Product.query.get(product_id)
-        if not product or product.deleted_at:
+        product = Product.query.filter_by(id=product_id, deleted_at=None).first()
+        if not product:
             raise ProductNotFoundError(f"Product with id {product_id} not found")
         return product
     
