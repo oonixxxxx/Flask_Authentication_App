@@ -3,21 +3,23 @@ version: '3.8'
 services:
   web:
     build: .
-    restart: always
     ports:
       - "8000:8000"
     environment:
       - FLASK_APP=app
-      - FLASK_ENV=production
+      - FLASK_ENV=development
       - DATABASE_URL=postgresql://user:password@db:5432/dbname
-      - SECRET_KEY=${SECRET_KEY}
+      - SECRET_KEY=dev-secret-key
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - .:/app
     depends_on:
       - db
       - redis
+    command: flask run --host=0.0.0.0 --port=8000
 
   db:
     image: postgres:13
-    restart: always
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
@@ -27,7 +29,6 @@ services:
 
   redis:
     image: redis:6
-    restart: always
     volumes:
       - redis_data:/data
 
