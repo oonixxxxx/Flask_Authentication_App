@@ -33,3 +33,9 @@ class ProductionConfig(BaseConfig):
     """Конфигурация для продакшена"""
     DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL') 
+
+class TestingConfig(BaseConfig):
+    """Конфигурация для тестирования"""
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    WTF_CSRF_ENABLED = False 

@@ -72,14 +72,29 @@
 
 ## 🛠 Технологии
 <div align="center">
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org)
+  <p>
+    <a href="https://www.python.org">
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    </a>
+    <a href="https://flask.palletsprojects.com">
+      <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
+    </a>
+    <a href="https://www.postgresql.org">
+      <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+    </a>
+  </p>
+  <p>
+    <a href="https://redis.io">
+      <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+    </a>
+    <a href="https://www.docker.com">
+      <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+    </a>
+    <a href="https://nginx.org">
+      <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
+    </a>
+  </p>
 </div>
-
 ## 📁 Структура проекта 
 
 <div align="center">
@@ -117,19 +132,16 @@ project/
 
 ### Через Docker (рекомендуется)
 
-bash
 Клонирование репозитория
 git clone https://github.com/your-username/onixhub.git
 cd onixhub
 Настройка окружения
 cp .env.example .env
-Отредактируйте .env под свои нужды
 Запуск через Docker
 docker-compose up -d
 
 ### Локальная установка
 
-bash
 Создание виртуального окружения
 python -m venv venv
 source venv/bin/activate # Linux/macOS
